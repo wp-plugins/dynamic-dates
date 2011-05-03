@@ -47,7 +47,9 @@ Dynamic Dates uses the built-in PHP functions [date] and [strtotime] to parse an
 
 = How can I create a customized date? =
 
-* Use the [date] shortcode. It accepts an output format option (see the PHP [Date Format Options](http://php.net/manual/en/function.date.php) page) and a time option which is a date/time string (see the PHP [Date and Time Format](http://www.php.net/manual/en/datetime.formats.php) page).
+* Use the [date] shortcode.
+* Use the [date format="*[PHP Date Format](http://php.net/manual/en/function.date.php)*"]
+* Use the [date format="*[PHP Date Format](http://php.net/manual/en/function.date.php)*" time="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*"]
 
 = How can I contact the author? =
 
