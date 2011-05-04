@@ -45,11 +45,13 @@ Use one of the built-in shortcodes:
 
 > `[yesterday]`, `[today]`, `[tomorrow]`, `[last-month]`, `[this-month]`, `[next-month]`, `[last-year]`, `[this-year]`, `[next-year]`
 
+If you are not using WordPress 3 or later, you should substitute the hyphen in the shortcode with an underscore. Example: [this_year]
+
 = How can I display a customized date? =
 
-Use the `[date]` shortcode, providing *format*, *time* and *relative_to* options:
+Use the [date] shortcode, providing *format*, *time* and *relative_to* options:
 
-[date format="*[PHP Date Format](http://php.net/manual/en/function.date.php)*" time="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*" relative_to="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*"]
+[date format="*[Format](http://php.net/manual/en/function.date.php)*" time="*[Date or Time](http://www.php.net/manual/en/datetime.formats.php)*" relative_to="*[Date or Time](http://www.php.net/manual/en/datetime.formats.php)*"]
 
 Examples:
 
