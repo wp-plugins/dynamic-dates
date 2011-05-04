@@ -45,7 +45,7 @@ Use one of the built-in shortcodes:
 
 > `[yesterday]`, `[today]`, `[tomorrow]`, `[last-month]`, `[this-month]`, `[next-month]`, `[last-year]`, `[this-year]`, `[next-year]`
 
-If you are not using WordPress 3 or later, you should substitute the hyphen in the shortcode with an underscore. Example: [this_year]
+Note: If you are not using WordPress 3 or later, you should substitute the hyphen in the shortcode with an underscore. Example: [this_year]
 
 = How can I display a customized date? =
 
