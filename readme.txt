@@ -2,7 +2,7 @@
 Contributors: jasonhendriks
 Donate link: http://www.jasonhendriks.com/programmer/dynamic-dates/
 Tags: dynamic, date, dates, time, times, calculator
-Requires at least: 2.7
+Requires at least: 3.0
 Tested up to: 3.1.2
 Stable tag: trunk
 
@@ -12,7 +12,7 @@ A WordPress plugin that dynamically calculates dates in your post or page.
 
 A WordPress plugin that dynamically calculates dates and times. Custom dates can be inserted in your post or page with short-codes.
 
-Requires WordPress 2.7 and PHP 5.3.
+Requires WordPress 3.0 and PHP 5.3.
 
 == Installation ==
 
