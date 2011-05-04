@@ -51,23 +51,29 @@ Use the `[date]` shortcode, providing both a *format* and *time* option:
 
 > [date format="*[PHP Date Format](http://php.net/manual/en/function.date.php)*" time="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*"]
 
+Use the *relative_to* option for complex dates:
+
+> [date format="*[PHP Date Format](http://php.net/manual/en/function.date.php)*" time="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*" relative_to="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*"]
+
 Examples:
 
-* Our church's next Sunday service is **May 8th**
+> Our church's next Sunday service is **May 8/11**
 
-> `[date format="F jS" time="this Sunday"]`
+> `[date format="F j/Y" time="this Sunday"]`
 
-* Canadian Thanksgiving is **Monday, October 10, 2011**
-
-> `[date format="l, F j, Y" time="second monday of october"]`
-
-* In **2009** I was two years younger
+> In **2009** I was two years younger
 
 > `[date format="Y" time="2 years ago"]`
 
-* The day before my next birthday is **2012-03-03**
+> Next year my birthday is on a **Sunday**!
 
-> `[date format="Y-m-d" time="march 4th -1 day +1 year"]`
+> `[date format="l" time="march 4th +1 year"]`
+
+> Next year, Canadian Thanksgiving is **October 10th** in 2011 and **October 8th** in 2012
+
+> `[date format="l, F j, Y" time="second monday of october"]`
+
+> `[date format="l, F j, Y" time="second monday of october" relative_to="next year"]`
 
 = How can I contact the author? =
 
