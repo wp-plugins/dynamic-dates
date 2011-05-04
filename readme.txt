@@ -47,11 +47,7 @@ Use one of the built-in shortcodes:
 
 = How can I display a customized date? =
 
-Use the `[date]` shortcode, providing both a *format* and *time* option:
-
-> [date format="*[PHP Date Format](http://php.net/manual/en/function.date.php)*" time="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*"]
-
-Use the *relative_to* option for complex dates:
+Use the `[date]` shortcode, providing *format*, *time* and *relative_to* options:
 
 > [date format="*[PHP Date Format](http://php.net/manual/en/function.date.php)*" time="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*" relative_to="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*"]
 
