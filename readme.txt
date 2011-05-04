@@ -41,15 +41,17 @@ A WordPress plugin that dynamically calculates dates and times. Custom dates can
 
 Dynamic Dates uses the built-in PHP functions [date] and [strtotime] to parse and display custom dates.
 
-= What are the built-in shortcodes? =
+= How can I put a quick date in my bog? =
+
+Use one of the built-in shortcodes:
 
 * [yesterday], [today], [tomorrow], [last-month], [this-month], [next-month], [last-year], [this-year], [next-year]
 
 = How can I create a customized date? =
 
-* Use the [date] shortcode.
-* Use the [date format="*[PHP Date Format](http://php.net/manual/en/function.date.php)*"]
-* Use the [date format="*[PHP Date Format](http://php.net/manual/en/function.date.php)*" time="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*"]
+Use the [date] shortcode, providing both a *format* and *time* option:
+
+> [date format="*[PHP Date Format](http://php.net/manual/en/function.date.php)*" time="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*"]
 
 = How can I contact the author? =
 
@@ -57,13 +59,7 @@ Send me a [question or comment](http://www.jasonhendriks.com/contact/ "Contact J
 
 == Changelog ==
 
-= 0.1 =
-* Release date: 2011-05-02
+= 1.0 =
+* Release date: 2011-05-03
 * First release
-
-== Upgrade Notice ==
-
-= 0.1 =
-
-The first version. Yay!
-
+* Tested with PHP v5.3.4
