@@ -4,7 +4,7 @@
 		Plugin Name: Dynamic Dates
 		Plugin URI: http://www.jasonhendriks.com/programmer/dynamic-dates/
 		Description: A WordPress plugin that dynamically calculates dates in your post or page
-		Version: 1.0
+		Version: 1.0.1
 		Author: Jason Hendriks
 		Author URI: http://jasonhendriks.com/
 		License: GPL version 3 or any later version
@@ -113,14 +113,18 @@ if(!class_exists("Dynamic_Dates")) {
 
 		function date_shortcode($atts) {
 			extract(shortcode_atts(array(
+				"format" => "c",
 				"output" => "c",
 				"time" => "now"
 			), $atts));
-			return $this->get_date($output, $time);
+			if($output) {
+				$format = $output;
+			}
+			return $this->get_date($format, $time);
 		}
 
-		function get_date($output="c", $time="now") {
-			return date($output, strtotime($time));
+		function get_date($format="c", $time="now") {
+			return date($format, strtotime($time));
 		}
 	}
 }
