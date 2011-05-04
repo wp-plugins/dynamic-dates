@@ -4,13 +4,13 @@ Donate link: http://www.jasonhendriks.com/programmer/dynamic-dates/
 Tags: dynamic, date, dates, time, times, calculator
 Requires at least: 3.0
 Tested up to: 3.1.2
-Stable tag: trunk
+Stable tag: 1.0.0
 
-A WordPress plugin that dynamically calculates relative dates in your post or page.
+A WordPress plugin that calculates relative dates dynamically in your post or page.
 
 == Description ==
 
-A WordPress plugin that dynamically calculates relative dates and times. Custom dates can be inserted in your post or page with short-codes.
+A WordPress plugin that calculates relative dates and times dynamically. Custom dates can be inserted in your post or page with short-codes.
 
 Requires WordPress 3.0 and PHP 5.3.
 
@@ -45,7 +45,7 @@ Use one of the built-in shortcodes:
 
 > `[yesterday]`, `[today]`, `[tomorrow]`, `[last-month]`, `[this-month]`, `[next-month]`, `[last-year]`, `[this-year]`, `[next-year]`
 
-Note: If you are not using WordPress 3 or later, you should substitute the hyphen in the shortcode with an underscore. Example: [this_year]
+Note: If you are *not* using WordPress 3 or later, you should substitute the hyphen in the shortcode with an underscore. Example: [this_year]
 
 = How can I display a customized date? =
 
@@ -67,7 +67,7 @@ Examples:
 
 > `[date format="l" time="march 4th +1 year"]`
 
-> Next year, Canadian Thanksgiving is **October 10th** in 2011 and **October 8th** in 2012
+> Canadian Thanksgiving is **October 10th** in 2011 and **October 8th** in 2012
 
 > `[date format="l, F j, Y" time="second monday of october"]`
 
@@ -79,15 +79,15 @@ Send me a [question or comment](http://www.jasonhendriks.com/contact/ "Contact J
 
 == Changelog ==
 
-= trunk =
+= 1.0.0 =
 * Release date: 2011-05-03
 * First release
 * Tested with PHP v5.3.4
 
 == Upgrade Notice ==
 
-= trunk =
-Having some issues with the WordPress versioning system.
+= 1.0.0 =
+The first version. Yay!
 
 == Screenshots ==
 
