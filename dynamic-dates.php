@@ -47,6 +47,13 @@ if(!class_exists("Dynamic_Dates")) {
 			add_shortcode( "last-year", array( $this, "last_year_shortcode") );
 			add_shortcode( "this-year", array( $this, "this_year_shortcode") );
 			add_shortcode( "next-year", array( $this, "next_year_shortcode") );
+			// for versions of WordPress less than 3
+			add_shortcode( "last_month", array( $this, "last_month_shortcode") );
+			add_shortcode( "this_month", array( $this, "this_month_shortcode") );
+			add_shortcode( "next_month", array( $this, "next_month_shortcode") );
+			add_shortcode( "last_year", array( $this, "last_year_shortcode") );
+			add_shortcode( "this_year", array( $this, "this_year_shortcode") );
+			add_shortcode( "next_year", array( $this, "next_year_shortcode") );
 		}
 	
 		/**
@@ -115,16 +122,17 @@ if(!class_exists("Dynamic_Dates")) {
 			extract(shortcode_atts(array(
 				"format" => "c",
 				"output" => "c",
-				"time" => "now"
+				"time" => "now",
+				"relative_to" => "now"
 			), $atts));
 			if($output != "c") {
 				$format = $output;
 			}
-			return $this->get_date($format, $time);
+			return $this->get_date($format, $time, $relative_to);
 		}
 
-		function get_date($format="c", $time="now") {
-			return date($format, strtotime($time));
+		function get_date($format="c", $time="now", $relative_to="now") {
+			return date($format, strtotime($time, strtotime($relative_to)));
 		}
 	}
 }
