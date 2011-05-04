@@ -77,3 +77,12 @@ Send me a [question or comment](http://www.jasonhendriks.com/contact/ "Contact J
 * Release date: 2011-05-03
 * First release
 * Tested with PHP v5.3.4
+
+== Upgrade Notice ==
+
+= 1.0 =
+Having some issues with the WordPress versioning system.
+
+== Screenshots ==
+
+1. Dynamic Dates running at [jasonhendriks.com](http://www.jasonhendriks.com/programmer/dynamic-dates/dynamic-dates-examples/)
