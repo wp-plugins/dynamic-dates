@@ -113,14 +113,18 @@ if(!class_exists("Dynamic_Dates")) {
 
 		function date_shortcode($atts) {
 			extract(shortcode_atts(array(
+				"format" => "c",
 				"output" => "c",
 				"time" => "now"
 			), $atts));
-			return $this->get_date($output, $time);
+			if($output != "c") {
+				$format = $output;
+			}
+			return $this->get_date($format, $time);
 		}
 
-		function get_date($output="c", $time="now") {
-			return date($output, strtotime($time));
+		function get_date($format="c", $time="now") {
+			return date($format, strtotime($time));
 		}
 	}
 }

@@ -1,7 +1,7 @@
 === Dynamic Dates ===
 Contributors: jasonhendriks
 Donate link: http://www.jasonhendriks.com/programmer/dynamic-dates/
-Tags: dynamic, date, dates, calculator
+Tags: dynamic, date, dates, time, times, calculator
 Requires at least: 2.7
 Tested up to: 3.1.2
 Stable tag: 1.0
@@ -17,23 +17,19 @@ A WordPress plugin that dynamically calculates dates and times. Custom dates can
 1. Download Dynamic Dates
 1. Unzip and upload the resulting folder to the '/wp-content/plugins/' directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place the shortcode in your posts and/or pages. A theme template function call is also available.
+1. Place a Dynamic Date shortcode in your posts and/or pages. A theme template function call is also available.
 
 **Detailed examples for use can be found at the [Dynamic Dates homepage](http://www.jasonhendriks.com/programmer/dynamic-dates/)**
 
-*Some simple examples:*
+*Some quick examples:*
 
 >[yesterday]
 
->[this-month]
+>[next-month]
 
->[next-year]
+>[date format="F jS" time="this Sunday"]
 
->[date output="F jS" time="this Sunday"]
-
->[date output="Y" time="2 years ago"]
-
->[date output="Y-m-d" time="march 4th -1 day +1 year"]
+>[date format="Y" time="2 years ago"]
 
 == Frequently Asked Questions ==
 
@@ -41,17 +37,35 @@ A WordPress plugin that dynamically calculates dates and times. Custom dates can
 
 Dynamic Dates uses the built-in PHP functions [date] and [strtotime] to parse and display custom dates.
 
-= How can I put a quick date in my bog? =
+= How can I display a quick date? =
 
 Use one of the built-in shortcodes:
 
-* [yesterday], [today], [tomorrow], [last-month], [this-month], [next-month], [last-year], [this-year], [next-year]
+> [yesterday], [today], [tomorrow], [last-month], [this-month], [next-month], [last-year], [this-year], [next-year]
 
-= How can I create a customized date? =
+= How can I display a customized date? =
 
 Use the [date] shortcode, providing both a *format* and *time* option:
 
 > [date format="*[PHP Date Format](http://php.net/manual/en/function.date.php)*" time="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*"]
+
+Examples:
+
+* Our church's next Sunday service is **May 8th**
+
+> [date format="F jS" time="this Sunday"]
+
+* Canadian Thanksgiving is **Monday, October 10, 2011**
+
+> [date format="l, F j, Y" time="second monday of october"]
+
+* In **2009** I was two years younger
+
+> [date format="Y" time="2 years ago"]
+
+* The day before my next birthday is **2012-03-03**
+
+> [date format="Y-m-d" time="march 4th -1 day +1 year"]
 
 = How can I contact the author? =
 
