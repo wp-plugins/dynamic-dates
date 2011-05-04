@@ -1,7 +1,7 @@
 === Dynamic Dates ===
 Contributors: jasonhendriks
 Donate link: http://www.jasonhendriks.com/programmer/dynamic-dates/
-Tags: dynamic, date, dates, calculator
+Tags: dynamic, date, dates, time, times, calculator
 Requires at least: 2.7
 Tested up to: 3.1.2
 Stable tag: 1.0.1
