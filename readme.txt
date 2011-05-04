@@ -49,7 +49,7 @@ Use one of the built-in shortcodes:
 
 Use the `[date]` shortcode, providing *format*, *time* and *relative_to* options:
 
-> [date format="*[PHP Date Format](http://php.net/manual/en/function.date.php)*" time="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*" relative_to="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*"]
+[date format="*[PHP Date Format](http://php.net/manual/en/function.date.php)*" time="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*" relative_to="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*"]
 
 Examples:
 
