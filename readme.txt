@@ -23,29 +23,29 @@ A WordPress plugin that dynamically calculates dates and times. Custom dates can
 
 *Some quick examples:*
 
->[yesterday]
+>`[yesterday]`
 
->[next-month]
+>`[next-month]`
 
->[date format="F jS" time="this Sunday"]
+>`[date format="F jS" time="this Sunday"]`
 
->[date format="Y" time="2 years ago"]
+>`[date format="Y" time="2 years ago"]`
 
 == Frequently Asked Questions ==
 
 = How does it work? =
 
-Dynamic Dates uses the built-in PHP functions [date] and [strtotime] to parse and display custom dates.
+Dynamic Dates uses the built-in PHP functions date and strtotime to parse and display custom dates.
 
 = How can I display a quick date? =
 
 Use one of the built-in shortcodes:
 
-> [yesterday], [today], [tomorrow], [last-month], [this-month], [next-month], [last-year], [this-year], [next-year]
+> `[yesterday]`, `[today]`, `[tomorrow]`, `[last-month]`, `[this-month]`, `[next-month]`, `[last-year]`, `[this-year]`, `[next-year]`
 
 = How can I display a customized date? =
 
-Use the [date] shortcode, providing both a *format* and *time* option:
+Use the `[date]` shortcode, providing both a *format* and *time* option:
 
 > [date format="*[PHP Date Format](http://php.net/manual/en/function.date.php)*" time="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*"]
 
@@ -53,19 +53,19 @@ Examples:
 
 * Our church's next Sunday service is **May 8th**
 
-> [date format="F jS" time="this Sunday"]
+> `[date format="F jS" time="this Sunday"]`
 
 * Canadian Thanksgiving is **Monday, October 10, 2011**
 
-> [date format="l, F j, Y" time="second monday of october"]
+> `[date format="l, F j, Y" time="second monday of october"]`
 
 * In **2009** I was two years younger
 
-> [date format="Y" time="2 years ago"]
+> `[date format="Y" time="2 years ago"]`
 
 * The day before my next birthday is **2012-03-03**
 
-> [date format="Y-m-d" time="march 4th -1 day +1 year"]
+> `[date format="Y-m-d" time="march 4th -1 day +1 year"]`
 
 = How can I contact the author? =
 
