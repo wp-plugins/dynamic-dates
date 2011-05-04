@@ -117,7 +117,7 @@ if(!class_exists("Dynamic_Dates")) {
 				"output" => "c",
 				"time" => "now"
 			), $atts));
-			if($output) {
+			if($output != "c") {
 				$format = $output;
 			}
 			return $this->get_date($format, $time);
