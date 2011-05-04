@@ -12,6 +12,8 @@ A WordPress plugin that dynamically calculates dates in your post or page.
 
 A WordPress plugin that dynamically calculates dates and times. Custom dates can be inserted in your post or page with short-codes.
 
+Requires WordPress 2.7 and PHP 5.3.
+
 == Installation ==
 
 1. Download Dynamic Dates
