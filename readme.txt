@@ -1,16 +1,17 @@
 === Dynamic Dates ===
 Contributors: jasonhendriks
-Donate link: http://www.jasonhendriks.com/programmer/dynamic-dates/
-Tags: dynamic, date, dates, time, times, calculator
-Requires at least: 3.0
-Tested up to: 3.1.2
-Stable tag: 1.0.0
+Tags: dynamic, date, dates, time, times, calculator, format, formatter, formatting
+Requires at least: 2.7
+Tested up to: 4.1
+Stable tag: 1.0.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A WordPress plugin that calculates relative dates dynamically in your post or page.
+A WordPress plugin that calculates dates and relative dates dynamically in your post or page.
 
 == Description ==
 
-A WordPress plugin that calculates relative dates and times dynamically. Custom dates can be inserted in your post or page with short-codes.
+A WordPress plugin that calculates dates and relative dates dynamically. Custom dates can be inserted in your post or page with short-codes.
 
 Requires WordPress 3.0 and PHP 5.3.
 
@@ -79,12 +80,19 @@ Send me a [question or comment](http://www.jasonhendriks.com/contact/ "Contact J
 
 == Changelog ==
 
+= 1.0.1 =
+* Release date: 2015-01-23
+* A biennial update to re-list Dynamic Dates in the WordPress plugin directory
+
 = 1.0.0 =
 * Release date: 2011-05-03
 * First release
 * Tested with PHP v5.3.4
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+A superficial update to re-list Dynamic Dates in the WordPress plugin directory
 
 = 1.0.0 =
 The first version. Yay!

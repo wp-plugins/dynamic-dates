@@ -4,25 +4,25 @@
 		Plugin Name: Dynamic Dates
 		Plugin URI: http://www.jasonhendriks.com/programmer/dynamic-dates/
 		Description: A WordPress plugin that calculates relative dates dynamically in your post or page
-		Version: trunk
+		Version: 1.0.1
 		Author: Jason Hendriks
 		Author URI: http://jasonhendriks.com/
 		License: GPL version 3 or any later version
-		
+
 		** Requires WordPress 2.7 **
-		
+
 		Copyright (C) 2011  Jason Hendriks
-		
+
 		This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
 		the Free Software Foundation, either version 3 of the License, or
 		(at your option) any later version.
-		
+
 		This program is distributed in the hope that it will be useful,
 		but WITHOUT ANY WARRANTY; without even the implied warranty of
 		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 		GNU General Public License for more details.
-		
+
 		You should have received a copy of the GNU General Public License
 		along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
@@ -34,7 +34,7 @@ if(!class_exists("Dynamic_Dates")) {
 	 * Dynamic_Dates.
 	 */
 	class Dynamic_Dates {
-			
+
 		function Dynamic_Dates() {
 			add_shortcode( "date", array( $this, "date_shortcode") );
 			add_shortcode( "dynamic-dates-version", array( $this, "version_shortcode") );
@@ -55,7 +55,7 @@ if(!class_exists("Dynamic_Dates")) {
 			add_shortcode( "this_year", array( $this, "this_year_shortcode") );
 			add_shortcode( "next_year", array( $this, "next_year_shortcode") );
 		}
-	
+
 		/**
 		 * Shortcode to return the current plugin version.
 		 * From http://code.garyjones.co.uk/get-wordpress-plugin-version/
