@@ -1,16 +1,19 @@
 === Dynamic Dates ===
 Contributors: jasonhendriks
-Donate link: http://www.jasonhendriks.com/programmer/dynamic-dates/
-Tags: dynamic, date, dates, time, times, calculator
+Tags: dynamic, date, dates, time, times, calculator, format, formatter, formatting
 Requires at least: 2.7
-Tested up to: 3.1.2
-Stable tag: trunk
+Tested up to: 4.1
+Stable tag: 1.0.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A WordPress plugin that dynamically calculates dates in your post or page.
+A WordPress plugin that calculates dates and relative dates dynamically in your post or page.
 
 == Description ==
 
-A WordPress plugin that dynamically calculates dates and times. Custom dates can be inserted in your post or page with short-codes.
+A WordPress plugin that calculates dates and relative dates dynamically. Custom dates can be inserted in your post or page with short-codes.
+
+Requires WordPress 3.0 and PHP 5.3.
 
 == Installation ==
 
@@ -43,29 +46,33 @@ Use one of the built-in shortcodes:
 
 > `[yesterday]`, `[today]`, `[tomorrow]`, `[last-month]`, `[this-month]`, `[next-month]`, `[last-year]`, `[this-year]`, `[next-year]`
 
+Note: If you are *not* using WordPress 3 or later, you should substitute the hyphen in the shortcode with an underscore. Example: [this_year]
+
 = How can I display a customized date? =
 
-Use the `[date]` shortcode, providing both a *format* and *time* option:
+Use the [date] shortcode, providing *format*, *time* and *relative_to* options:
 
-> [date format="*[PHP Date Format](http://php.net/manual/en/function.date.php)*" time="*[PHP Date or Time](http://www.php.net/manual/en/datetime.formats.php)*"]
+[date format="*[Format](http://php.net/manual/en/function.date.php)*" time="*[Date or Time](http://www.php.net/manual/en/datetime.formats.php)*" relative_to="*[Date or Time](http://www.php.net/manual/en/datetime.formats.php)*"]
 
 Examples:
 
-* Our church's next Sunday service is **May 8th**
+> Our church's next Sunday service is **May 8/11**
 
-> `[date format="F jS" time="this Sunday"]`
+> `[date format="F j/Y" time="this Sunday"]`
 
-* Canadian Thanksgiving is **Monday, October 10, 2011**
-
-> `[date format="l, F j, Y" time="second monday of october"]`
-
-* In **2009** I was two years younger
+> In **2009** I was two years younger
 
 > `[date format="Y" time="2 years ago"]`
 
-* The day before my next birthday is **2012-03-03**
+> Next year my birthday is on a **Sunday**!
 
-> `[date format="Y-m-d" time="march 4th -1 day +1 year"]`
+> `[date format="l" time="march 4th +1 year"]`
+
+> Canadian Thanksgiving is **October 10th** in 2011 and **October 8th** in 2012
+
+> `[date format="l, F j, Y" time="second monday of october"]`
+
+> `[date format="l, F j, Y" time="second monday of october" relative_to="next year"]`
 
 = How can I contact the author? =
 
@@ -73,7 +80,23 @@ Send me a [question or comment](http://www.jasonhendriks.com/contact/ "Contact J
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.1 =
+* Release date: 2015-01-23
+* A biennial update to re-list Dynamic Dates in the WordPress plugin directory
+
+= 1.0.0 =
 * Release date: 2011-05-03
 * First release
 * Tested with PHP v5.3.4
+
+== Upgrade Notice ==
+
+= 1.0.1 =
+A superficial update to re-list Dynamic Dates in the WordPress plugin directory
+
+= 1.0.0 =
+The first version. Yay!
+
+== Screenshots ==
+
+1. Dynamic Dates running at [jasonhendriks.com](http://www.jasonhendriks.com/programmer/dynamic-dates/dynamic-dates-examples/)

@@ -3,26 +3,26 @@
 
 		Plugin Name: Dynamic Dates
 		Plugin URI: http://www.jasonhendriks.com/programmer/dynamic-dates/
-		Description: A WordPress plugin that dynamically calculates dates in your post or page
-		Version: trunk
+		Description: A WordPress plugin that calculates relative dates dynamically in your post or page
+		Version: 1.0.1
 		Author: Jason Hendriks
 		Author URI: http://jasonhendriks.com/
 		License: GPL version 3 or any later version
-		
+
 		** Requires WordPress 2.7 **
-		
+
 		Copyright (C) 2011  Jason Hendriks
-		
+
 		This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
 		the Free Software Foundation, either version 3 of the License, or
 		(at your option) any later version.
-		
+
 		This program is distributed in the hope that it will be useful,
 		but WITHOUT ANY WARRANTY; without even the implied warranty of
 		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 		GNU General Public License for more details.
-		
+
 		You should have received a copy of the GNU General Public License
 		along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
@@ -34,7 +34,7 @@ if(!class_exists("Dynamic_Dates")) {
 	 * Dynamic_Dates.
 	 */
 	class Dynamic_Dates {
-			
+
 		function Dynamic_Dates() {
 			add_shortcode( "date", array( $this, "date_shortcode") );
 			add_shortcode( "dynamic-dates-version", array( $this, "version_shortcode") );
@@ -47,8 +47,15 @@ if(!class_exists("Dynamic_Dates")) {
 			add_shortcode( "last-year", array( $this, "last_year_shortcode") );
 			add_shortcode( "this-year", array( $this, "this_year_shortcode") );
 			add_shortcode( "next-year", array( $this, "next_year_shortcode") );
+			// for versions of WordPress less than 3
+			add_shortcode( "last_month", array( $this, "last_month_shortcode") );
+			add_shortcode( "this_month", array( $this, "this_month_shortcode") );
+			add_shortcode( "next_month", array( $this, "next_month_shortcode") );
+			add_shortcode( "last_year", array( $this, "last_year_shortcode") );
+			add_shortcode( "this_year", array( $this, "this_year_shortcode") );
+			add_shortcode( "next_year", array( $this, "next_year_shortcode") );
 		}
-	
+
 		/**
 		 * Shortcode to return the current plugin version.
 		 * From http://code.garyjones.co.uk/get-wordpress-plugin-version/
@@ -115,16 +122,17 @@ if(!class_exists("Dynamic_Dates")) {
 			extract(shortcode_atts(array(
 				"format" => "c",
 				"output" => "c",
-				"time" => "now"
+				"time" => "now",
+				"relative_to" => "now"
 			), $atts));
 			if($output != "c") {
 				$format = $output;
 			}
-			return $this->get_date($format, $time);
+			return $this->get_date($format, $time, $relative_to);
 		}
 
-		function get_date($format="c", $time="now") {
-			return date($format, strtotime($time));
+		function get_date($format="c", $time="now", $relative_to="now") {
+			return date($format, strtotime($time, strtotime($relative_to)));
 		}
 	}
 }
