@@ -13,6 +13,8 @@ A WordPress plugin that calculates dates and relative dates dynamically in your 
 
 A WordPress plugin that calculates dates and relative dates dynamically. Custom dates can be inserted in your post or page with short-codes.
 
+Add an always up-to-date copyright notice, or the date of your next monthly poker game.
+
 Requires WordPress 3.0 and PHP 5.3.
 
 == Installation ==
@@ -22,25 +24,13 @@ Requires WordPress 3.0 and PHP 5.3.
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Place a Dynamic Date shortcode in your posts and/or pages. A theme template function call is also available.
 
-**Detailed examples for use can be found at the [Dynamic Dates homepage](http://www.jasonhendriks.com/programmer/dynamic-dates/)**
-
-*Some quick examples:*
-
->`[yesterday]`
-
->`[next-month]`
-
->`[date format="F jS" time="this Sunday"]`
-
->`[date format="Y" time="2 years ago"]`
-
 == Frequently Asked Questions ==
 
 = How does it work? =
 
 Dynamic Dates uses the built-in PHP functions date and strtotime to parse and display custom dates.
 
-= How can I display a quick date? =
+= How can I display a date? =
 
 Use one of the built-in shortcodes:
 
@@ -50,33 +40,22 @@ Note: If you are *not* using WordPress 3 or later, you should substitute the hyp
 
 = How can I display a customized date? =
 
-Use the [date] shortcode, providing *format*, *time* and *relative_to* options:
+This is a very powerful feature. Use the [date] shortcode, providing *format*, *time* and the optional *relative_to*:
 
-[date format="*[Format](http://php.net/manual/en/function.date.php)*" time="*[Date or Time](http://www.php.net/manual/en/datetime.formats.php)*" relative_to="*[Date or Time](http://www.php.net/manual/en/datetime.formats.php)*"]
-
-Examples:
-
-> Our church's next Sunday service is **May 8/11**
+[date format="*[Format](http://php.net/manual/en/function.date.php)*" time="*[Date or Time](http://php.net/manual/en/datetime.formats.relative.php)*" [relative_to="*[Date or Time](http://php.net/manual/en/datetime.formats.relative.php)*"] ]
 
 > `[date format="F j/Y" time="this Sunday"]`
 
-> In **2009** I was two years younger
-
-> `[date format="Y" time="2 years ago"]`
-
-> Next year my birthday is on a **Sunday**!
+> `[date format="Y" time="2 years ago"]`
 
 > `[date format="l" time="march 4th +1 year"]`
 
-> Canadian Thanksgiving is **October 10th** in 2011 and **October 8th** in 2012
+> `[date format="F jS" time="second monday of october"]`
 
-> `[date format="l, F j, Y" time="second monday of october"]`
+> `[date format="F jS" time="second monday of october" relative_to="next year"]`
 
-> `[date format="l, F j, Y" time="second monday of october" relative_to="next year"]`
+See [live examples](http://programmer.jasonhendriks.com/programmer/dynamic-dates/dynamic-dates-examples/) at my website.
 
-= How can I contact the author? =
-
-Send me a [question or comment](http://www.jasonhendriks.com/contact/ "Contact Jason Hendriks") at my webpage.
 
 == Changelog ==
 
