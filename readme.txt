@@ -3,7 +3,7 @@ Contributors: jasonhendriks
 Tags: dynamic, date, dates, time, times, calculator, format, formatter, formatting
 Requires at least: 2.7
 Tested up to: 4.1
-Stable tag: 1.0.1
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,9 @@ A WordPress plugin that calculates dates and relative dates dynamically. Custom 
 
 Add an always up-to-date copyright notice, or the date of your next monthly poker game.
 
-Requires WordPress 3.0 and PHP 5.3.
+NEW! Now supporting the local WordPress timezone, user-specified timezones, and user-specified languages!
+
+Requirements: PHP 5.2 for user-specified timezones and PHP 5.3 with the International extension for user-specified languages.
 
 == Installation ==
 
@@ -34,30 +36,28 @@ Dynamic Dates uses the built-in PHP functions date and strtotime to parse and di
 
 Use one of the built-in shortcodes:
 
-> `[yesterday]`, `[today]`, `[tomorrow]`, `[last-month]`, `[this-month]`, `[next-month]`, `[last-year]`, `[this-year]`, `[next-year]`
+> `[now]`, `[yesterday]`, `[today]`, `[tomorrow]`, `[last-month]`, `[this-month]`, `[next-month]`, `[last-year]`, `[this-year]`, `[next-year]`
 
 Note: If you are *not* using WordPress 3 or later, you should substitute the hyphen in the shortcode with an underscore. Example: [this_year]
 
 = How can I display a customized date? =
 
-This is a very powerful feature. Use the [date] shortcode, providing *format*, *time* and the optional *relative_to*:
+This is a very powerful feature. Use any shortcode and extend it with the following attributes, each of which is optional:
 
-[date format="*[Format](http://php.net/manual/en/function.date.php)*" time="*[Date or Time](http://php.net/manual/en/datetime.formats.relative.php)*" [relative_to="*[Date or Time](http://php.net/manual/en/datetime.formats.relative.php)*"] ]
-
-> `[date format="F j/Y" time="this Sunday"]`
-
-> `[date format="Y" time="2 years ago"]`
-
-> `[date format="l" time="march 4th +1 year"]`
-
-> `[date format="F jS" time="second monday of october"]`
-
-> `[date format="F jS" time="second monday of october" relative_to="next year"]`
+* format - a pattern to format the date or time. Browse the different formatting codes for [English mode](http://php.net/manual/en/function.date.php) and [International mode](http://userguide.icu-project.org/formatparse/datetime).
+* time - the date or time [specified with natural language](http://php.net/manual/en/datetime.formats.relative.php)
+* relative_to - a date or time that the first time is "relative to", also specified with natural language
+* gmt_offset - a timezone to display (the default is set in the WordPress settings (requires PHP 5.2 or higher)
+* language - a language to use (requires PHP 5.3 or higher)
 
 See [live examples](http://programmer.jasonhendriks.com/programmer/dynamic-dates/dynamic-dates-examples/) at my website.
 
 
 == Changelog ==
+
+= 2.0 =
+* Added timezone support, the most requested feature. The default timezone is set in the WordPress configuration. Requires PHP 5.2. Use the gmt_offset shortcode attribute.
+* Added international language support, the second most requested feature. The default language is set in the WordPress configuration. Requires PHP 5.3 with the International extension. Use the language shortcode attribute.
 
 = 1.0.1 =
 * Release date: 2015-01-23
@@ -69,6 +69,9 @@ See [live examples](http://programmer.jasonhendriks.com/programmer/dynamic-dates
 * Tested with PHP v5.3.4
 
 == Upgrade Notice ==
+
+= 2.0 =
+The first major update in nearly four years! Now with timezone and language support.
 
 = 1.0.1 =
 A superficial update to re-list Dynamic Dates in the WordPress plugin directory
