@@ -47,7 +47,7 @@ This is a very powerful feature. Use any shortcode and extend it with the follow
 * format - a pattern to format the date or time. Browse the different formatting codes for [English mode](http://php.net/manual/en/function.date.php) and [International mode](http://userguide.icu-project.org/formatparse/datetime).
 * time - the date or time [specified with natural language](http://php.net/manual/en/datetime.formats.relative.php)
 * relative_to - a date or time that the first time is "relative to", also specified with natural language
-* gmt_offset - a timezone to display (the default is set in the WordPress settings (requires PHP 5.2 or higher)
+* gmt_offset - a [timezone](http://www.oracle.com/technetwork/java/javase/javase7locales-334809.html) to display (the default is set in the WordPress settings (requires PHP 5.2 or higher)
 * language - a language to use (requires PHP 5.3 or higher)
 
 See [live examples](http://programmer.jasonhendriks.com/programmer/dynamic-dates/dynamic-dates-examples/) at my website.
