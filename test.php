@@ -22,7 +22,7 @@ class testDateTime {
 	function testCases() {
 		$this->test ( '%s', "Y-m-d\\TH:i:s+e", 'now', 'now' );
 		$this->test ( '%s', "l, F j, Y \\a\\t g:i:s A e" );
-		$this->test ( 'Toronto: %s', "l, F j, Y \\a\\t g:i:s A e", 'now', 'now', 'EST' );
+		$this->test ( 'Toronto: %s', "l, F j, Y \\a\\t g:i:s A e", 'now', 'now', '-5' );
 		$this->test ( 'Paris: %s', "l, F j Y H:i:s", 'now', 'now', 'Europe/Paris', 'FR' );
 		
 		// Copyright © 2015 Jason Hendriks

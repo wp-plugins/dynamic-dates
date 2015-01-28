@@ -1,5 +1,5 @@
 <?php
-const VERSION = 2.0;
+const DYNAMIC_DATES_VERSION = '2.0.2';
 require_once 'Converter.php';
 if (! function_exists ( 'debugDD' )) {
 	function debugDD($text) {

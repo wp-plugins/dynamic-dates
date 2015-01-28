@@ -3,7 +3,7 @@ Contributors: jasonhendriks
 Tags: dynamic, date, dates, time, times, calculator, format, formatter, formatting
 Requires at least: 2.7
 Tested up to: 4.1
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,23 +55,27 @@ See [live examples](http://programmer.jasonhendriks.com/programmer/dynamic-dates
 
 == Changelog ==
 
-= 2.0.1 =
+= 2.0.2 - 2015-01-28 =
+* Fixed: In some PHP environments, the WordPress timezone setting can not be interpreted - the error is DateTimeZone::__construct() [datetimezone.--construct]: Unknown or bad timezone
+
+= 2.0.1 - 2015-01-27  =
 * Gave the settings group name a more unique name to avoid collisions with other plugins
 
-= 2.0 =
+= 2.0 - 2015-01-25 =
 * Added timezone support, the most requested feature. The default timezone is set in the WordPress configuration. Requires PHP 5.2. Use the gmt_offset shortcode attribute.
 * Added international language support, the second most requested feature. The default language is set in the WordPress configuration. Requires PHP 5.3 with the International extension. Use the language shortcode attribute.
 
-= 1.0.1 =
-* Release date: 2015-01-23
+= 1.0.1 - 2015-01-23  =
 * A biennial update to re-list Dynamic Dates in the WordPress plugin directory
 
-= 1.0.0 =
-* Release date: 2011-05-03
+= 1.0.0 - 2011-05-03 =
 * First release
 * Tested with PHP v5.3.4
 
 == Upgrade Notice ==
+
+= 2.0.2 =
+Fixed the error that presents in some environment "Unknown or bad timezone"
 
 = 2.0.1 =
 Fix name collision issues with other plugins.

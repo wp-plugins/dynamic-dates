@@ -10,17 +10,18 @@ if (! class_exists ( "DynamicDatesShortCodeController" )) {
 		private $options;
 		function __construct() {
 			$this->options = get_option ( DynamicDatesAdminController::OPTION_NAME );
-			$this->gmt_offset = get_option ( 'gmt_offset' );
+			debugDD("wp tz: ".get_option ( 'gmt_offset' ));
+			$this->gmt_offset = timezone_name_from_abbr ( '', get_option ( 'gmt_offset' ) * 3600, 0 );
 			$this->language = get_locale ();
 			
 			// register WordPress hooks
-			add_shortcode ( "date", array (
-					$this,
-					"date_shortcode" 
-			) );
 			add_shortcode ( "dynamic-dates-version", array (
 					$this,
 					"version_shortcode" 
+			) );
+			add_shortcode ( "date", array (
+					$this,
+					"date_shortcode" 
 			) );
 			add_shortcode ( "now", array (
 					$this,
@@ -95,7 +96,7 @@ if (! class_exists ( "DynamicDatesShortCodeController" )) {
 		 * @return string Plugin version
 		 */
 		function version_shortcode() {
-			return DynamicDates::VERSION;
+			return DYNAMIC_DATES_VERSION;
 		}
 		/**
 		 * This function handle all shortcode calls
@@ -110,14 +111,21 @@ if (! class_exists ( "DynamicDatesShortCodeController" )) {
 					"format" => 'r',
 					"time" => 'now',
 					"relative_to" => 'now',
-					"gmt_offset" => $this->gmt_offset,
+					"gmt_offset" => '',
+					"timezone" => '',
 					"language" => $this->language,
-					"parser" => ''
+					"parser" => '' 
 			), $atts ) );
+			if (! empty ( $gmt_offset ) && empty ( $timezone )) {
+				$timezone = $gmt_offset;
+			}
+			if (empty ( $timezone )) {
+				$timezone = $this->gmt_offset;
+			}
 			try {
-				debugDD("language: ".$language);
-				$d = new DynamicDatesConverter ( $this->useInternational () && strcasecmp($parser,'english') != 0 );
-				return $d->getDate ( $format, $time, $relative_to, $gmt_offset, $language );
+				debugDD ( "language: " . $language );
+				$d = new DynamicDatesConverter ( $this->useInternational () && strcasecmp ( $parser, 'english' ) != 0 );
+				return $d->getDate ( $format, $time, $relative_to, $timezone, $language );
 			} catch ( Exception $e ) {
 				return '<em>[Dynamic Dates plugin error: ' . $e->getMessage () . ']</em>';
 			}
