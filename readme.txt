@@ -47,7 +47,7 @@ This is a very powerful feature. Use any shortcode and extend it with the follow
 * format - a pattern to format the date or time. Browse the different formatting codes for [English mode](http://php.net/manual/en/function.date.php) and [International mode](http://userguide.icu-project.org/formatparse/datetime).
 * time - the date or time [specified with natural language](http://php.net/manual/en/datetime.formats.relative.php)
 * relative_to - a date or time that the first time is "relative to", also specified with natural language
-* gmt_offset - a [timezone](http://www.oracle.com/technetwork/java/javase/javase7locales-334809.html) to display (the default is set in the WordPress settings (requires PHP 5.2 or higher)
+* timezone - a [timezone](http://www.oracle.com/technetwork/java/javase/javase7locales-334809.html) to display (the default is set in the WordPress settings (requires PHP 5.2 or higher)
 * language - a language to use (requires PHP 5.3 or higher)
 
 See [live examples](http://programmer.jasonhendriks.com/programmer/dynamic-dates/dynamic-dates-examples/) at my website.
@@ -62,7 +62,7 @@ See [live examples](http://programmer.jasonhendriks.com/programmer/dynamic-dates
 * Gave the settings group name a more unique name to avoid collisions with other plugins
 
 = 2.0 - 2015-01-25 =
-* Added timezone support, the most requested feature. The default timezone is set in the WordPress configuration. Requires PHP 5.2. Use the gmt_offset shortcode attribute.
+* Added timezone support, the most requested feature. The default timezone is set in the WordPress configuration. Requires PHP 5.2. Use the timezone shortcode attribute.
 * Added international language support, the second most requested feature. The default language is set in the WordPress configuration. Requires PHP 5.3 with the International extension. Use the language shortcode attribute.
 
 = 1.0.1 - 2015-01-23  =

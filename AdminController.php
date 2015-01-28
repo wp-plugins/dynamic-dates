@@ -223,7 +223,7 @@ if (! class_exists ( "DynamicDatesAdminController" )) {
 		<li>format - a pattern to format the date or time</li>
 		<li>time - the date or time to format</li>
 		<li>relative_to - a date or time that the first time is "relative to"</li>
-		<li>gmt_offset - a timezone to display (the default is set in the
+		<li>timezone - a timezone to display (the default is set in the
 			WordPress settings (requires PHP 5.2 or higher)</li>
 		<li>language - a language to use (requires PHP 5.3 or higher)</li>
 	</ol>
