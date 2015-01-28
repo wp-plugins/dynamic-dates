@@ -55,6 +55,9 @@ See [live examples](http://programmer.jasonhendriks.com/programmer/dynamic-dates
 
 == Changelog ==
 
+= 2.0.1 =
+* Gave the settings group name a more unique name to avoid collisions with other plugins
+
 = 2.0 =
 * Added timezone support, the most requested feature. The default timezone is set in the WordPress configuration. Requires PHP 5.2. Use the gmt_offset shortcode attribute.
 * Added international language support, the second most requested feature. The default language is set in the WordPress configuration. Requires PHP 5.3 with the International extension. Use the language shortcode attribute.
@@ -71,7 +74,7 @@ See [live examples](http://programmer.jasonhendriks.com/programmer/dynamic-dates
 == Upgrade Notice ==
 
 = 2.0.1 =
-
+Fix name collision issues with other plugins.
 
 = 2.0 =
 The first major update in nearly four years! Now with timezone and language support.
