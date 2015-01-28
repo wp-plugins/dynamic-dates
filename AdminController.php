@@ -6,9 +6,26 @@ if (! class_exists ( "DynamicDatesAdminController" )) {
 	 */
 	class DynamicDatesAdminController {
 		private $options;
-		const OPTIONS_NAME = 'dynamic_dates_options';
+		
+		// The key to save data under in the database
+		const OPTION_NAME = 'dynamic_dates_options';
+		
+		// The Postman Group is used for saving data, make sure it is globally unique
+		const SETTINGS_GROUP_NAME = 'dynamic_dates_group';
+		
+		// page titles
+		const PAGE_TITLE = 'Dynamic Dates Settings';
+		const MENU_TITLE = 'Dynamic Dates';
+		
+		// slugs
+		const SLUG = 'dynamic-dates';
+
+		/**
+		 * 
+		 * @param unknown $basename
+		 */
 		function __construct($basename) {
-			$this->options = get_option ( DynamicDatesAdminController::OPTIONS_NAME );
+			$this->options = get_option ( DynamicDatesAdminController::OPTION_NAME );
 			// Adds "Settings" link to the plugin action page
 			add_filter ( 'plugin_action_links_' . $basename, array (
 					$this,
@@ -61,7 +78,7 @@ if (! class_exists ( "DynamicDatesAdminController" )) {
 		 */
 		public function add_plugin_page() {
 			// This page will be under "Settings"
-			add_options_page ( 'Dynamic Dates', 'Dynamic Dates', 'manage_options', 'dynamic-dates', array (
+			add_options_page ( DynamicDatesAdminController::PAGE_TITLE, DynamicDatesAdminController::MENU_TITLE, 'manage_options', DynamicDatesAdminController::SLUG, array (
 					$this,
 					'create_admin_page' 
 			) );
@@ -88,7 +105,7 @@ if (! class_exists ( "DynamicDatesAdminController" )) {
 				$this->options ['mode'] = 'english';
 			}
 			debugDD ( 'mode: ' . $this->options ['mode'] );
-			register_setting ( 'my_option_group', DynamicDatesAdminController::OPTIONS_NAME, array (
+			register_setting ( DynamicDatesAdminController::SETTINGS_GROUP_NAME, DynamicDatesAdminController::OPTION_NAME, array (
 					$this,
 					'sanitize' 
 			) );
@@ -97,19 +114,19 @@ if (! class_exists ( "DynamicDatesAdminController" )) {
 			add_settings_section ( 'main', 'International Mode', array (
 					$this,
 					'printMainSectionInfo' 
-			), 'dynamic-dates' );
+			), DynamicDatesAdminController::SLUG );
 			
 			add_settings_field ( 'international', 'Mode', array (
 					$this,
 					'international_callback' 
-			), 'dynamic-dates', 'main' );
+			), DynamicDatesAdminController::SLUG, 'main' );
 		}
 		/**
 		 * Get the settings option array and print one of its values
 		 */
 		public function international_callback() {
 			$disabled = '';
-			if (! class_exists ( 'IntlDateFormatter' )) {
+			if (! class_exists ( 'IntlDateFormatter' ) && false) {
 				$disabled = 'disabled="disabled"';
 			}
 			printf ( '<input %s type="radio" id="mode" name="dynamic_dates_options[mode]" value="english" %s>English</input> ', $disabled, $this->options ['mode'] == 'english' ? 'checked="checked"' : '' );
@@ -138,14 +155,14 @@ if (! class_exists ( "DynamicDatesAdminController" )) {
 			?>
 <div class="wrap">
             <?php screen_icon(); ?>
-            <h2><?php echo 'Dynamic Dates' ?></h2>
+            <h2><?php echo DynamicDatesAdminController::PAGE_TITLE ?></h2>
 	<form method="post" action="options.php">
 	<?php
 			// This prints out all hidden setting fields
-			settings_fields ( 'my_option_group' );
-			do_settings_sections ( 'dynamic-dates' );
+			settings_fields ( DynamicDatesAdminController::SETTINGS_GROUP_NAME );
+			do_settings_sections ( DynamicDatesAdminController::SLUG );
 			$disabled = '';
-			if (! class_exists ( 'IntlDateFormatter' )) {
+			if (! class_exists ( 'IntlDateFormatter' ) && false) {
 				$disabled = 'disabled="disabled"';
 			}
 			submit_button ( 'Save Changes', 'primary', 'submit', true, $disabled );

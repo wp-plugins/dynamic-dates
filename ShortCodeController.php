@@ -9,7 +9,7 @@ if (! class_exists ( "DynamicDatesShortCodeController" )) {
 		private $language;
 		private $options;
 		function __construct() {
-			$this->options = get_option ( DynamicDatesAdminController::OPTIONS_NAME );
+			$this->options = get_option ( DynamicDatesAdminController::OPTION_NAME );
 			$this->gmt_offset = get_option ( 'gmt_offset' );
 			$this->language = get_locale ();
 			

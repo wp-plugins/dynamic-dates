@@ -70,6 +70,9 @@ See [live examples](http://programmer.jasonhendriks.com/programmer/dynamic-dates
 
 == Upgrade Notice ==
 
+= 2.0.1 =
+
+
 = 2.0 =
 The first major update in nearly four years! Now with timezone and language support.
 

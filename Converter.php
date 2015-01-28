@@ -1,5 +1,11 @@
 <?php
 if (! class_exists ( "DynamicDatesConverter" )) {
+	
+	/**
+	 * This is where the "Heavy Lifting" gets done
+	 * @author jasonhendriks
+	 *
+	 */
 	class DynamicDatesConverter {
 		private $allowIntlDateFormatter;
 		
