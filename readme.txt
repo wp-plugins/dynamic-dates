@@ -50,7 +50,7 @@ This is a very powerful feature. Use any shortcode and extend it with the follow
 * timezone - a [timezone](http://www.oracle.com/technetwork/java/javase/javase7locales-334809.html) to display (the default is set in the WordPress settings (requires PHP 5.2 or higher)
 * language - a language to use (requires PHP 5.3 or higher)
 
-See [live examples](http://programmer.jasonhendriks.com/programmer/dynamic-dates/dynamic-dates-examples/) at my website.
+See [live examples](http://programmer.jasonhendriks.com/dynamic-dates-examples/) at my website.
 
 
 == Changelog ==
