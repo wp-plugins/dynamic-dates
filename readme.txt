@@ -91,4 +91,4 @@ The first version. Yay!
 
 == Screenshots ==
 
-1. Dynamic Dates running at [jasonhendriks.com](http://www.jasonhendriks.com/programmer/dynamic-dates/dynamic-dates-examples/)
+1. Dynamic Dates running at [jasonhendriks.com](http://programmer.jasonhendriks.com/dynamic-dates-examples/)
