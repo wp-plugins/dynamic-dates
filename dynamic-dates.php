@@ -32,11 +32,7 @@ require_once 'ShortCodeController.php';
 require_once 'AdminController.php';
 
 // start the meat and potatoes
-if (class_exists ( "DynamicDatesShortCodeController" )) {
-	$dynamic_dates = new DynamicDatesShortCodeController ();
-}
-if (class_exists ( "DynamicDatesAdminController" )) {
-	$dynamic_dates = new DynamicDatesAdminController ( plugin_basename ( __FILE__ ) );
-}
+new DynamicDatesShortCodeController ();
+new DynamicDatesAdminController ( plugin_basename ( __FILE__ ) );
 
 ?>

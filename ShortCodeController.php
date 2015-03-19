@@ -8,11 +8,16 @@ if (! class_exists ( "DynamicDatesShortCodeController" )) {
 		private $gmt_offset;
 		private $language;
 		private $options;
+		private $logger;
 		function __construct() {
-			$this->options = get_option ( DynamicDatesAdminController::OPTION_NAME );
-			debugDD("wp tz: ".get_option ( 'gmt_offset' ));
-			$this->gmt_offset = timezone_name_from_abbr ( '', get_option ( 'gmt_offset' ) * 3600, 0 );
+			$this->options = DynamicDatesOptions::getInstance ()->getOptions ();
+			$this->logger = new DynamicDatesLogger ( 'DynamicDatesShortCodeController' );
+			$current_offset = get_option('gmt_offset');
+			$tzstring = get_option('timezone_string');
+			$this->logger->debug ( sprintf ( 'gmt_offset=%s current_offset=%s timezone_name=%s', $current_offset, $tzstring, $this->gmt_offset ) );
+			$this->gmt_offset = $tzstring;
 			$this->language = get_locale ();
+			$this->logger->debug ( sprintf ( "get_locale(): %s", $this->language ) );
 			
 			// register WordPress hooks
 			add_shortcode ( "dynamic-dates-version", array (
@@ -123,10 +128,16 @@ if (! class_exists ( "DynamicDatesShortCodeController" )) {
 				$timezone = $this->gmt_offset;
 			}
 			try {
-				debugDD ( "language: " . $language );
-				$d = new DynamicDatesConverter ( $this->useInternational () && strcasecmp ( $parser, 'english' ) != 0 );
+				$this->logger->debug ( "language: " . $language );
+				$allowInternational = $this->useInternational () && strcasecmp ( $parser, 'english' ) != 0;
+				if (isset ( $this->options ['log_level'] )) {
+					$d = new DynamicDatesConverter ( $allowInternational, $this->options ['log_level'] );
+				} else {
+					$d = new DynamicDatesConverter ( $allowInternational );
+				}
 				return $d->getDate ( $format, $time, $relative_to, $timezone, $language );
 			} catch ( Exception $e ) {
+				$this->logger->error ( $e->getMessage () );
 				return '<em>[Dynamic Dates plugin error: ' . $e->getMessage () . ']</em>';
 			}
 		}

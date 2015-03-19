@@ -2,22 +2,34 @@
 Contributors: jasonhendriks
 Tags: dynamic, date, dates, time, times, calculator, format, formatter, formatting
 Requires at least: 2.7
-Tested up to: 4.1
-Stable tag: 2.0.2
+Tested up to: 4.1.1
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 A WordPress plugin that calculates dates and relative dates dynamically in your post or page.
 
+
+
 == Description ==
 
-A WordPress plugin that calculates dates and relative dates dynamically. Custom dates can be inserted in your post or page with short-codes.
+A WordPress plugin calculates dates and relative dates dynamically in your posts and pages. Some examples:
+
+> Our churchÕs next service is on Mar 21/15
+> [[date format="M d/Y" time="this Sunday"]]
 
 Add an always up-to-date copyright notice, or the date of your next monthly poker game.
 
-NEW! Now supporting the local WordPress timezone, user-specified timezones, and user-specified languages!
 
-Requirements: PHP 5.2 for user-specified timezones and PHP 5.3 with the International extension for user-specified languages.
+
+
+###* What's New for v2 *
+*Now supporting the local WordPress timezone, user-specified timezones, and user-specified languages!
+
+= Requirements =
+*PHP 5.2 for user-specified timezones or PHP 5.3 with the International extension for user-specified languages.
+
+
 
 == Installation ==
 
@@ -25,6 +37,8 @@ Requirements: PHP 5.2 for user-specified timezones and PHP 5.3 with the Internat
 1. Unzip and upload the resulting folder to the '/wp-content/plugins/' directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Place a Dynamic Date shortcode in your posts and/or pages. A theme template function call is also available.
+
+
 
 == Frequently Asked Questions ==
 
@@ -54,6 +68,11 @@ See [live examples](http://programmer.jasonhendriks.com/programmer/dynamic-dates
 
 
 == Changelog ==
+
+= 2.0.3 - 2015-03-19 =
+* Fixed: The method used to calculate the current timezone was faulty for some environments
+* Added an option to set the Log Level (defaulted to Error) instead of just blindly writing debug lines into debug.log/error.log
+* Fixed: Systems with no ability to format internation dates were Incorrectly allowed to enable international formatting
 
 = 2.0.2 - 2015-01-28 =
 * Fixed: In some PHP environments, the WordPress timezone setting can not be interpreted - the error is DateTimeZone::__construct() [datetimezone.--construct]: Unknown or bad timezone

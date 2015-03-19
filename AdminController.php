@@ -6,6 +6,7 @@ if (! class_exists ( "DynamicDatesAdminController" )) {
 	 */
 	class DynamicDatesAdminController {
 		private $options;
+		private $logger;
 		
 		// The key to save data under in the database
 		const OPTION_NAME = 'dynamic_dates_options';
@@ -19,13 +20,15 @@ if (! class_exists ( "DynamicDatesAdminController" )) {
 		
 		// slugs
 		const SLUG = 'dynamic-dates';
-
+		
 		/**
-		 * 
-		 * @param unknown $basename
+		 *
+		 * @param unknown $basename        	
 		 */
 		function __construct($basename) {
-			$this->options = get_option ( DynamicDatesAdminController::OPTION_NAME );
+			$this->options = DynamicDatesOptions::getInstance ()->getOptions ();
+			$this->logger = new DynamicDatesLogger ( 'DynamicDatesAdminController' );
+			
 			// Adds "Settings" link to the plugin action page
 			add_filter ( 'plugin_action_links_' . $basename, array (
 					$this,
@@ -101,10 +104,6 @@ if (! class_exists ( "DynamicDatesAdminController" )) {
 		 * Register and add settings
 		 */
 		public function page_init() {
-			if (! isset ( $this->options ['mode'] )) {
-				$this->options ['mode'] = 'english';
-			}
-			debugDD ( 'mode: ' . $this->options ['mode'] );
 			register_setting ( DynamicDatesAdminController::SETTINGS_GROUP_NAME, DynamicDatesAdminController::OPTION_NAME, array (
 					$this,
 					'sanitize' 
@@ -120,17 +119,33 @@ if (! class_exists ( "DynamicDatesAdminController" )) {
 					$this,
 					'international_callback' 
 			), DynamicDatesAdminController::SLUG, 'main' );
+			
+			add_settings_field ( 'logLevel', 'Log Level', array (
+					$this,
+					'logLevelCallback' 
+			), DynamicDatesAdminController::SLUG, 'main' );
 		}
 		/**
 		 * Get the settings option array and print one of its values
 		 */
 		public function international_callback() {
 			$disabled = '';
-			if (! class_exists ( 'IntlDateFormatter' ) && false) {
+			if (! class_exists ( 'IntlDateFormatter' )) {
 				$disabled = 'disabled="disabled"';
 			}
 			printf ( '<input %s type="radio" id="mode" name="dynamic_dates_options[mode]" value="english" %s>English</input> ', $disabled, $this->options ['mode'] == 'english' ? 'checked="checked"' : '' );
 			printf ( '<input %s type="radio" id="mode" name="dynamic_dates_options[mode]" value="international" %s>International</input>', $disabled, $this->options ['mode'] == 'international' ? 'checked="checked"' : '' );
+		}
+		
+		/**
+		 * Get the settings option array and print one of its values
+		 */
+		public function logLevelCallback() {
+			printf ( '<select id="input_%2$s" class="input_%2$s" name="%1$s[%2$s]">', self::OPTION_NAME, 'log_level' );
+			printf ( '<option value="%s" %s>Off</option>', DynamicDatesLogger::OFF_INT, DynamicDatesLogger::OFF_INT == $this->options ['log_level'] ? 'selected="selected"' : '' );
+			printf ( '<option value="%s" %s>Debug</option>', DynamicDatesLogger::DEBUG_INT, DynamicDatesLogger::DEBUG_INT == $this->options ['log_level'] ? 'selected="selected"' : '' );
+			printf ( '<option value="%s" %s>Errors</option>', DynamicDatesLogger::ERROR_INT, DynamicDatesLogger::ERROR_INT == $this->options ['log_level'] ? 'selected="selected"' : '' );
+			printf ( '</select>' );
 		}
 		
 		/**
@@ -143,8 +158,13 @@ if (! class_exists ( "DynamicDatesAdminController" )) {
 			$new_input = array ();
 			
 			if (isset ( $input ['mode'] )) {
-				debugDD ( 'mode sanitize ' . $input ['mode'] );
+				$this->logger->debug ( 'mode sanitize ' . $input ['mode'] );
 				$new_input ['mode'] = sanitize_text_field ( $input ['mode'] );
+			}
+			
+			if (isset ( $input ['log_level'] )) {
+				$this->logger->debug ( 'log_level sanitize ' . $input ['log_level'] );
+				$new_input ['log_level'] = absint ( $input ['log_level'] );
 			}
 			return $new_input;
 		}
@@ -156,6 +176,9 @@ if (! class_exists ( "DynamicDatesAdminController" )) {
 <div class="wrap">
             <?php screen_icon(); ?>
             <h2><?php echo DynamicDatesAdminController::PAGE_TITLE ?></h2>
+            <p style="background-color:white;padding:5px"><span>
+            <em>Thank-you for using Dynamic Dates! We've been working on another great plugin! Check out <a href="https://wordpress.org/plugins/postman-smtp/">Postman SMTP</a>, a rock-solid email engine for WordPress!</em>
+            </span></p>
 	<form method="post" action="options.php">
 	<?php
 			// This prints out all hidden setting fields
