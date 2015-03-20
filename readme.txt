@@ -7,13 +7,13 @@ Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A WordPress plugin that calculates dates and relative dates dynamically in your post or page.
+Calculate dates (‘next Sunday’) and relative dates (‘December 25th two years from now’) in your posts and pages.
 
 
 
 == Description ==
 
-A WordPress plugin calculates dates and relative dates dynamically in your posts and pages. Some examples:
+Calculates dates and relative dates dynamically in your posts and pages. For example:
 
 > Our church's next service is on Mar 21/15
 >
@@ -21,14 +21,15 @@ A WordPress plugin calculates dates and relative dates dynamically in your posts
 
 Add an always up-to-date copyright notice, or the date of your next monthly poker game.
 
+See the FAQ for all the possibilties.
 
 
 
 ###* What's New for v2 *
-*Now supporting the local WordPress timezone, user-specified timezones, and user-specified languages!
+* Now supporting the local WordPress timezone, user-specified timezones, and user-specified languages!
 
 = Requirements =
-*PHP 5.2 for user-specified timezones or PHP 5.3 with the International extension for user-specified languages.
+* PHP 5.2 for user-specified timezones or PHP 5.3 with the International extension for user-specified languages.
 
 
 
@@ -45,7 +46,7 @@ Add an always up-to-date copyright notice, or the date of your next monthly poke
 
 = How does it work? =
 
-Dynamic Dates uses the built-in PHP functions date and strtotime to parse and display custom dates.
+Dynamic Dates uses PHP's [strtotime()](http://php.net/manual/en/datetime.formats.relative.php) function to parse natural language into relative timestamps. For example, two years from now is "+2 year" and Canadian Thanksgiving is the "second monday of october" . Browse the full [strtotime()](http://php.net/manual/en/datetime.formats.relative.php) reference to find other possibilities.
 
 = How can I display a date? =
 
@@ -57,7 +58,7 @@ Note: If you are *not* using WordPress 3 or later, you should substitute the hyp
 
 = How can I display a customized date? =
 
-This is a very powerful feature. Use any shortcode and extend it with the following attributes, each of which is optional:
+This is a very powerful feature. Use any shortcode, or the generic `[date]` shortcode, and extend it with the following attributes, each of which is optional:
 
 * format - a pattern to format the date or time. Browse the different formatting codes for [English mode](http://php.net/manual/en/function.date.php) and [International mode](http://userguide.icu-project.org/formatparse/datetime).
 * time - the date or time [specified with natural language](http://php.net/manual/en/datetime.formats.relative.php)
