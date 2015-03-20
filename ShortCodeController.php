@@ -12,9 +12,8 @@ if (! class_exists ( "DynamicDatesShortCodeController" )) {
 		function __construct() {
 			$this->options = DynamicDatesOptions::getInstance ()->getOptions ();
 			$this->logger = new DynamicDatesLogger ( 'DynamicDatesShortCodeController' );
-			$current_offset = get_option('gmt_offset');
-			$tzstring = get_option('timezone_string');
-			$this->logger->debug ( sprintf ( 'gmt_offset=%s current_offset=%s timezone_name=%s', $current_offset, $tzstring, $this->gmt_offset ) );
+			$tzstring = get_option ( 'timezone_string' );
+			$this->logger->debug ( sprintf ( 'timezone=%s', $tzstring ) );
 			$this->gmt_offset = $tzstring;
 			$this->language = get_locale ();
 			$this->logger->debug ( sprintf ( "get_locale(): %s", $this->language ) );
