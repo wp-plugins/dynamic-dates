@@ -96,6 +96,9 @@ See [live examples](http://programmer.jasonhendriks.com/programmer/dynamic-dates
 
 == Upgrade Notice ==
 
+= 2.0.3 =
+Stop clogging outfile with debug statements. Bug fixes.
+
 = 2.0.2 =
 Fixed the error that presents in some environment "Unknown or bad timezone"
 
