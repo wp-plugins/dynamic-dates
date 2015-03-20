@@ -31,9 +31,11 @@ if (! class_exists ( "DynamicDatesConverter" )) {
 				$answer = $fmt->format ( $timestamp );
 			} else if (class_exists ( 'DateTime' )) {
 				$date = new DateTime ();
-				if (! empty ( $gmt_offset ))
-					$date->setTimezone ( new DateTimeZone ( $gmt_offset ) );
 				$date->setTimestamp ( $timestamp );
+				$time = $date->format('His');
+				// don't set a timezone if the constructed date contains no time!
+				if ($time != '000000' && ! empty ( $gmt_offset ))
+					$date->setTimezone ( new DateTimeZone ( $gmt_offset ) );
 				$answer = $date->format ( $format );
 			} else {
 				$answer = date ( $format, strtotime ( $time, strtotime ( $relative_to ) ) );
