@@ -15,7 +15,8 @@ A WordPress plugin that calculates dates and relative dates dynamically in your 
 
 A WordPress plugin calculates dates and relative dates dynamically in your posts and pages. Some examples:
 
-> Our churchÕs next service is on Mar 21/15
+> Our church's next service is on Mar 21/15
+>
 > [[date format="M d/Y" time="this Sunday"]]
 
 Add an always up-to-date copyright notice, or the date of your next monthly poker game.
@@ -69,10 +70,11 @@ See [live examples](http://programmer.jasonhendriks.com/programmer/dynamic-dates
 
 == Changelog ==
 
-= 2.0.3 - 2015-03-19 =
-* Fixed: The method used to calculate the current timezone was faulty for some environments
+= 2.0.3 - 2015-03-20 =
+* Fixed: The method used to calculate the current timezone was faulty for some environments (produced '-4' for Toronto instead of '-5' during DST)
+* Fixed: The method used to apply timezones was incorrectly applying it to calculated dates without times (eg. 'next sunday')
 * Added an option to set the Log Level (defaulted to Error) instead of just blindly writing debug lines into debug.log/error.log
-* Fixed: Systems with no ability to format internation dates were Incorrectly allowed to enable international formatting
+* Fixed: Systems with no ability to format internation dates were incorrectly allowed to enable international formatting
 
 = 2.0.2 - 2015-01-28 =
 * Fixed: In some PHP environments, the WordPress timezone setting can not be interpreted - the error is DateTimeZone::__construct() [datetimezone.--construct]: Unknown or bad timezone

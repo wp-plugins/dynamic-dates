@@ -27,6 +27,12 @@ if (! class_exists ( "DynamicDatesConverter" )) {
 			$answer = '';
 			$timestamp = strtotime ( $time, strtotime ( $relative_to ) );
 			if (class_exists ( 'IntlDateFormatter' ) && $this->allowIntlDateFormatter) {
+				$date = new DateTime ();
+				$date->setTimestamp ( $timestamp );
+				$time = $date->format('His');
+				// don't set a timezone if the constructed date contains no time!
+				if ($time == '000000')
+					$gmt_offset = 'UTC';
 				$fmt = new IntlDateFormatter ( $language, IntlDateFormatter::FULL, IntlDateFormatter::FULL, $gmt_offset, IntlDateFormatter::GREGORIAN, $format );
 				$answer = $fmt->format ( $timestamp );
 			} else if (class_exists ( 'DateTime' )) {
@@ -34,7 +40,7 @@ if (! class_exists ( "DynamicDatesConverter" )) {
 				$date->setTimestamp ( $timestamp );
 				$time = $date->format('His');
 				// don't set a timezone if the constructed date contains no time!
-				if ($time != '000000' && ! empty ( $gmt_offset ))
+				if ($time != '000000')
 					$date->setTimezone ( new DateTimeZone ( $gmt_offset ) );
 				$answer = $date->format ( $format );
 			} else {

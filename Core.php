@@ -16,7 +16,8 @@ if (! class_exists ( "DynamicDatesLogger" )) {
 		private $logLevel;
 		function __construct($name) {
 			$this->name = $name;
-			$this->logLevel = DynamicDatesOptions::getInstance()->getOptions()['log_level'];
+			$options = DynamicDatesOptions::getInstance ()->getOptions ();
+			$this->logLevel = $options ['log_level'];
 		}
 		// better logging thanks to http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/
 		function debug($text) {
