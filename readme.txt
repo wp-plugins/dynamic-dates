@@ -21,7 +21,7 @@ Calculates dates and relative dates dynamically in your posts and pages. For exa
 
 Add an always up-to-date copyright notice, or the date of your next monthly poker game.
 
-See the FAQ for all the possibilties.
+See [examples on my website](http://programmer.jasonhendriks.com/dynamic-dates/dynamic-dates-examples/). See the FAQ for instructions on use.
 
 
 
@@ -75,7 +75,7 @@ See [live examples](http://programmer.jasonhendriks.com/programmer/dynamic-dates
 * Fixed: The method used to calculate the current timezone was faulty for some environments (produced '-4' for Toronto instead of '-5' during DST)
 * Fixed: The method used to apply timezones was incorrectly applying it to calculated dates without times (eg. 'next sunday')
 * Added an option to set the Log Level (defaulted to Error) instead of just blindly writing debug lines into debug.log/error.log
-* Fixed: Systems with no ability to format internation dates were incorrectly allowed to enable international formatting
+* Fixed: Systems with no ability to format international dates were incorrectly allowed to enable international formatting
 
 = 2.0.2 - 2015-01-28 =
 * Fixed: In some PHP environments, the WordPress timezone setting can not be interpreted - the error is DateTimeZone::__construct() [datetimezone.--construct]: Unknown or bad timezone
