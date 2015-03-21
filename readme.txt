@@ -21,7 +21,7 @@ Calculates dates and relative dates dynamically in your posts and pages. For exa
 
 Add an always up-to-date copyright notice, or the date of your next monthly poker game.
 
-See the FAQ for all the possibilties.
+See [examples on my website](http://programmer.jasonhendriks.com/dynamic-dates/dynamic-dates-examples/). See the FAQ for instructions on use.
 
 
 
