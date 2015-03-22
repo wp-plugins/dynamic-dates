@@ -68,17 +68,18 @@ This is a very powerful feature. Use any shortcode, or the generic `[date]` shor
 
 'English Mode' advanced examples:
 
-> It’s Sunday 15:58:47 in Paris, France
+> It’s **Sunday 15:58:47** in Paris, France
 > 
 >     `[date format="l H:i:s" timezone="Europe/Paris"]`
 >
-> Canadian Thanksgiving is October 12th this year and October 10th next year
+> Canadian Thanksgiving is **October 12th** this year and **October 10th** next year
 > 
->     `[date format="F jS" time="second monday of october" relative_to="next year"]`
+>     [date format="F jS" time="second monday of october"]
+>     [date format="F jS" time="second monday of october" relative_to="next year"]
 
 'International Mode' advanced examples:
 
-> Voy a la fiesta el viernes 22 de marzo
+> Voy a la fiesta **el viernes 22 de marzo**
 > 
 >     `[date format="d de MMMM" "time="friday" language="es_CL"]`
 
