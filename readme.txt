@@ -70,7 +70,7 @@ This is a very powerful feature. Use any shortcode, or the generic `[date]` shor
 
 > It’s **Sunday 15:58:47** in Paris, France
 > 
->     `[date format="l H:i:s" timezone="Europe/Paris"]`
+>     [date format="l H:i:s" timezone="Europe/Paris"]
 >
 > Canadian Thanksgiving is **October 12th** this year and **October 10th** next year
 > 
