@@ -17,7 +17,7 @@ Calculates dates and relative dates dynamically in your posts and pages. For exa
 
 > Our church's next service is on Mar 21/15
 >
-> [date format="M d/Y" time="this Sunday"]
+> `[date format="M d/Y" time="this Sunday"]`
 
 Add an always up-to-date copyright notice, or the date of your next monthly poker game.
 
@@ -48,13 +48,13 @@ See [examples on my website](http://programmer.jasonhendriks.com/dynamic-dates/d
 
 Dynamic Dates uses PHP's [strtotime()](http://php.net/manual/en/datetime.formats.relative.php) function to parse natural language into relative timestamps. For example, two years from now is "+2 year" and Canadian Thanksgiving is the "second monday of october" . Browse the full [strtotime()](http://php.net/manual/en/datetime.formats.relative.php) reference to find other possibilities.
 
-= How can I display a date? =
+= How can I display a simple date? =
 
 Use one of the built-in shortcodes:
 
 > `[now]`, `[yesterday]`, `[today]`, `[tomorrow]`, `[last-month]`, `[this-month]`, `[next-month]`, `[last-year]`, `[this-year]`, `[next-year]`
 
-Note: If you are *not* using WordPress 3 or later, you should substitute the hyphen in the shortcode with an underscore. Example: [this_year]
+See [live examples](http://programmer.jasonhendriks.com/dynamic-dates/dynamic-dates-examples/) at my website.
 
 = How can I display a customized date? =
 
@@ -65,6 +65,22 @@ This is a very powerful feature. Use any shortcode, or the generic `[date]` shor
 * relative_to - a date or time that the first time is "relative to", also specified with natural language
 * timezone - a [timezone](http://www.oracle.com/technetwork/java/javase/javase7locales-334809.html) to display (the default is set in the WordPress settings (requires PHP 5.2 or higher)
 * language - a language to use (requires PHP 5.3 or higher)
+
+'English Mode' advanced examples:
+
+> It’s Sunday 15:58:47 in Paris, France
+> 
+>     `[date format="l H:i:s" timezone="Europe/Paris"]`
+>
+> Canadian Thanksgiving is October 12th this year and October 10th next year
+> 
+>     `[date format="F jS" time="second monday of october" relative_to="next year"]`
+
+'International Mode' advanced examples:
+
+> Voy a la fiesta el viernes 22 de marzo
+> 
+>     `[date format="d de MMMM" "time="friday" language="es_CL"]`
 
 See [live examples](http://programmer.jasonhendriks.com/dynamic-dates/dynamic-dates-examples/) at my website.
 
