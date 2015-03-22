@@ -15,7 +15,7 @@ Calculate dates (‘next Sunday’) and relative dates (‘December 25th two yea
 
 Calculates dates and relative dates dynamically in your posts and pages. For example:
 
-> Our church's next service is on Mar 21/15
+> Our church's next service is on **Mar 21/15**
 >
 > `[date format="M d/Y" time="this Sunday"]`
 
