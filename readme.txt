@@ -17,7 +17,7 @@ Calculates dates and relative dates dynamically in your posts and pages. For exa
 
 > Our church's next service is on Mar 21/15
 >
-> [[date format="M d/Y" time="this Sunday"]]
+> [date format="M d/Y" time="this Sunday"]
 
 Add an always up-to-date copyright notice, or the date of your next monthly poker game.
 
