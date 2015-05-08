@@ -5,18 +5,22 @@ if (! class_exists ( "DynamicDatesShortCodeController" )) {
 	 * Dynamic_Dates.
 	 */
 	class DynamicDatesShortCodeController {
+		const WORDPRESS_TIMEZONE_STRING = 'timezone_string';
+		const WORDPRESS_GMT_OFFSET = 'gmt_offset';
 		private $gmt_offset;
 		private $language;
 		private $options;
 		private $logger;
 		function __construct() {
 			$this->options = DynamicDatesOptions::getInstance ()->getOptions ();
-			$this->logger = new DynamicDatesLogger ( 'DynamicDatesShortCodeController' );
-			$tzstring = get_option ( 'timezone_string' );
-			$this->logger->debug ( sprintf ( 'timezone=%s', $tzstring ) );
-			$this->gmt_offset = $tzstring;
+			$this->logger = new DynamicDatesLogger ( get_class ( $this ) );
+			$this->gmt_offset = get_option ( self::WORDPRESS_TIMEZONE_STRING );
+			if (empty ( $timezone )) {
+				$gmt = get_option ( self::WORDPRESS_GMT_OFFSET );
+				$this->gmt_offset = sprintf ( intval ( $gmt ) < 0 ? 'GMT%s' : 'GMT+%s', $gmt );
+			}
 			$this->language = get_locale ();
-			$this->logger->debug ( sprintf ( "get_locale(): %s", $this->language ) );
+			$this->logger->debug ( sprintf ( 'timezone=%s locale=%s', $this->gmt_offset, $this->language ) );
 			
 			// register WordPress hooks
 			add_shortcode ( "dynamic-dates-version", array (

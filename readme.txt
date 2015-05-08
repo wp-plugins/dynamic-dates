@@ -2,12 +2,12 @@
 Contributors: jasonhendriks
 Tags: dynamic, date, dates, time, times, calculator, format, formatter, formatting
 Requires at least: 2.7
-Tested up to: 4.1.1
-Stable tag: 2.0.3
+Tested up to: 4.2
+Stable tag: 2.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Calculate dates (‘next Sunday’) and relative dates (‘December 25th two years from now’) in your posts and pages.
+Calculate dates ('next Sunday') and relative dates ('December 25th two years from now') in your posts and pages.
 
 
 
@@ -68,7 +68,7 @@ This is a very powerful feature. Use any shortcode, or the generic `[date]` shor
 
 'English Mode' advanced examples:
 
-> It’s **Sunday 15:58:47** in Paris, France
+> It's **Sunday 15:58:47** in Paris, France
 > 
 >     [date format="l H:i:s" timezone="Europe/Paris"]
 >
@@ -87,6 +87,9 @@ See [live examples](http://programmer.jasonhendriks.com/dynamic-dates/dynamic-da
 
 
 == Changelog ==
+
+= 2.0.4 - 2015-05-08 =
+* [[Ticket](https://wordpress.org/support/topic/after-update-unknown-or-bad-timezone?replies=7)] Dates tags resulted in an error if the WordPress timezone was a GMT offset. Fixed.
 
 = 2.0.3 - 2015-03-20 =
 * Fixed: The method used to calculate the current timezone was faulty for some environments (produced '-4' for Toronto instead of '-5' during DST)
