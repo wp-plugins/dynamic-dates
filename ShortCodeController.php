@@ -15,7 +15,7 @@ if (! class_exists ( "DynamicDatesShortCodeController" )) {
 			$this->options = DynamicDatesOptions::getInstance ()->getOptions ();
 			$this->logger = new DynamicDatesLogger ( get_class ( $this ) );
 			$this->gmt_offset = get_option ( self::WORDPRESS_TIMEZONE_STRING );
-			if (empty ( $timezone )) {
+			if (empty ( $this->gmt_offset )) {
 				$gmt = get_option ( self::WORDPRESS_GMT_OFFSET );
 				$this->gmt_offset = sprintf ( intval ( $gmt ) < 0 ? 'GMT%s' : 'GMT+%s', $gmt );
 			}

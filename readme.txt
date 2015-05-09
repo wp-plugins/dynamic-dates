@@ -3,7 +3,7 @@ Contributors: jasonhendriks
 Tags: dynamic, date, dates, time, times, calculator, format, formatter, formatting
 Requires at least: 2.7
 Tested up to: 4.2
-Stable tag: 2.0.4
+Stable tag: 2.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -88,7 +88,7 @@ See [live examples](http://programmer.jasonhendriks.com/dynamic-dates/dynamic-da
 
 == Changelog ==
 
-= 2.0.4 - 2015-05-08 =
+= 2.0.5 - 2015-05-08 =
 * [[Ticket](https://wordpress.org/support/topic/after-update-unknown-or-bad-timezone?replies=7)] Dates tags resulted in an error if the WordPress timezone was a GMT offset. Fixed.
 
 = 2.0.3 - 2015-03-20 =

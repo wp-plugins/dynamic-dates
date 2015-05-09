@@ -4,7 +4,7 @@
  * Plugin Name: Dynamic Dates
  * Plugin URI: https://wordpress.org/plugins/dynamic-dates/
  * Description: A WordPress plugin that calculates relative dates dynamically in your post or page
- * Version: 2.0.4
+ * Version: 2.0.5
  * Author: Jason Hendriks
  * Author URI: http://jasonhendriks.com/
  * License: GPL version 3 or any later version
